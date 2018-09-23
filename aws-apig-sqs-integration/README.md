@@ -10,4 +10,4 @@ This article shows how to Integrate Amazon API Gateway as proxy for SQS (Simple 
 1.2 Click on "Create New Queue"
 1.3 Give queue a name, in our case it is "sqs-lambda-demo" and hit "Create Queue"
 
-![alt text](images/sqs.png)
+![alt text](images/sqs_queue.png)
