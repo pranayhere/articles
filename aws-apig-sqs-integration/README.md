@@ -12,12 +12,13 @@ This article shows how to Integrate Amazon API Gateway as proxy for SQS (Simple 
 1.4. Remember Queue URL (AWS-ACCT-ID/queue-name) and Queue ARN (AWS-ACCT-ID:queue-name)
 ![alt text](images/sqs_queue.png)
 
-### 2. Create IAM Policy###
+### 2. Create IAM Policy ###
 
 We will create IAM Policy and Role for AWS API Gateway to push Request Message to Queue.
 2.1. Select IAM, Navigate to "policies" and click on "Create Policy"
 2.2. Open JSON editor and add the following policy
-```{
+```json
+{
     "Version": "2012-10-17",
     "Statement": [
         {
@@ -27,7 +28,8 @@ We will create IAM Policy and Role for AWS API Gateway to push Request Message t
             "Resource": "arn:aws:sqs:ap-southeast-1:123456789:sqs-lambda-demo"
         }
     ]
-}```
+} 
+```
 
 2.3. click on "Review Policy", name policy as "apig-sqs-send-msg-policy" and hit "Create Policy"
 
