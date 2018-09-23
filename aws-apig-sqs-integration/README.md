@@ -9,7 +9,7 @@ This article shows how to Integrate Amazon API Gateway as proxy for SQS (Simple 
 1.1. Open AWS console in services navigate to Simple Queue Service. <br />
 1.2. Click on "Create New Queue" <br />
 1.3. Give queue a name, in our case it is "sqs-lambda-demo" and hit "Create Queue" <br />
-1.4. Remember Queue URL (AWS-ACCT-ID/queue-name) and Queue ARN (AWS-ACCT-ID:queue-name)
+1.4. Remember Queue URL (AWS-ACCT-ID/queue-name) and Queue ARN (AWS-ACCT-ID:queue-name) <br />
 ![alt text](images/sqs_queue.png)
 
 ### 2. Create IAM Policy ###
@@ -44,7 +44,7 @@ We will create IAM Policy and Role for AWS API Gateway to push Request Message t
 ![alt text](images/attach_policy_to_role.png)  <br />
 
 
-### 4. Create an API ###
+### 4. Create an API Structure ###
 
 3.1. Select API Gateway, click on "Create API", name api as "SQSProxy" and hit "Create".  <br />
 ![alt text](images/api_create.png)  <br />
@@ -53,13 +53,22 @@ We will create IAM Policy and Role for AWS API Gateway to push Request Message t
 3.4. Click on "enqueue" and hit "action > create method" and from dropdown select "POST". <br />
 ![alt text](images/resource_structure.png)  <br />
 
-### 5. Integrate the API ###
+### 5. Integrate the API with SQS ###
 
 5.1. Click on the "POST" method, in "integration type" click on "AWS service", provide region and AWS servie as "SQS". <br />
 5.2. Set Path override to Queue Path created in step 1. <br />
-5.3. Set execution role to the role created in step 3. <br />
-5.4. Set HTTP header with Name as "Content-Type" and Mapped from as "'application/x-www-form-urlencoded'" <br />
-5.5. In "Request body passthrough" select never and click on "add mapping template", name it as "application/json" and add the following snippet "Action=SendMessage&MessageBody=$input.body". This step will transform yout request body to the one accepted by SQS. <br />
+5.3. Set execution role to the role created in step 3. and hit "save". <br />
+![alt text](images/post_api.png)  <br />
+
+### 6. Modify API Request ###
+6.1. Click on "Integrate Request" <br />
+![alt text](images/api_req_flow.png)  <br />
+6.2. Set HTTP header with Name as "Content-Type" and Mapped from as "'application/x-www-form-urlencoded'" <br />
+6.3. In "Request body passthrough" select never and click on "add mapping template", name it as "application/json" and add the following snippet "Action=SendMessage&MessageBody=$input.body". This step will transform yout request body to the one accepted by SQS. <br />
 ![alt text](images/api_intg.png)  <br />
+
+### 7.Test And Deploy ###
+7.1. Once you followed all above steps, you are ready to test the API. AWS api gateway provides functionality to test the API. It's 
+
 
 That's it! Test your API and deploy in production.
