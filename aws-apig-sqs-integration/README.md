@@ -68,7 +68,15 @@ We will create IAM Policy and Role for AWS API Gateway to push Request Message t
 ![alt text](images/api_intg.png)  <br />
 
 ### 7.Test And Deploy ###
-7.1. Once you followed all above steps, you are ready to test the API. AWS api gateway provides functionality to test the API. It's 
-
+7.1. AWS api gateway provides functionality to test the API. <br />
+7.2. In the request body, add the test data. <br />
+```json
+{
+    "data" : "test"
+}
+```
+7.3. If you followed all the steps correctly, you should get 200 status. yey!!! <br />
+7.4. click on the resource "enqueue" and from "actions" select "Deploy Api". <br />
+7.5. Select or create new stage and deploy the Api. <br />
 
 That's it! Test your API and deploy in production.
