@@ -55,11 +55,11 @@ We will create IAM Policy and Role for AWS API Gateway to push Request Message t
 
 ### 5. Integrate the API ###
 
-5.1. Click on the "POST" method, in "integration type" click on "AWS service", provide region and AWS servie as "SQS".
-5.2. Set Path override to Queue Path created in step 1.
-5.3. Set execution role to the role created in step 3.
-5.4. Set HTTP header with Name as "Content-Type" and Mapped from as "'application/x-www-form-urlencoded'"
-5.5. In "Request body passthrough" select never and click on "add mapping template", name it as "application/json" and add the following snippet "Action=SendMessage&MessageBody=$input.body". This step will transform yout request body to the one accepted by SQS.
+5.1. Click on the "POST" method, in "integration type" click on "AWS service", provide region and AWS servie as "SQS". <br />
+5.2. Set Path override to Queue Path created in step 1. <br />
+5.3. Set execution role to the role created in step 3. <br />
+5.4. Set HTTP header with Name as "Content-Type" and Mapped from as "'application/x-www-form-urlencoded'" <br />
+5.5. In "Request body passthrough" select never and click on "add mapping template", name it as "application/json" and add the following snippet "Action=SendMessage&MessageBody=$input.body". This step will transform yout request body to the one accepted by SQS. <br />
 ![alt text](images/api_intg.png)  <br />
 
 That's it! Test your API and deploy in production.
