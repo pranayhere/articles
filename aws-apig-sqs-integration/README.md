@@ -66,7 +66,7 @@ We will create IAM Policy and Role for AWS API Gateway to push Request Message t
 6.3. In "Request body passthrough" select never and click on "add mapping template", name it as "application/json" and add the following snippet "Action=SendMessage&MessageBody=$input.body". This step will transform yout request body to the one accepted by SQS. <br />
 ![alt text](images/api_intg.png)  <br />
 
-### 7.Test And Deploy ###
+### 7. Test And Deploy ###
 7.1. AWS api gateway provides functionality to test the API. <br />
 7.2. In the request body, add the test data. <br />
 ```json
