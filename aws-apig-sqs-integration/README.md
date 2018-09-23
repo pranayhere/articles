@@ -55,5 +55,5 @@ We will create IAM Policy and Role for AWS API Gateway to push Request Message t
 
 ### 5. Integrate the API ###
 
-5.1.
-![alt text](images/api_resource_integration.png)  <br />
+5.1. 
+![alt text](images/api_intg.png)  <br />
