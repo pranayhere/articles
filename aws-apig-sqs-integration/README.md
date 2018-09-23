@@ -5,4 +5,4 @@ If you came across a situation where you need to process API Request asynchronou
 This article shows how to Integrate Amazon API Gateway as proxy for SQS (Simple Queue System).
 
 1. 
-      ![Alt text](articles/aws-apig-sqs-integration/images/first.png)
+      ![Alt text](images/first.png)
