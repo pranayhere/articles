@@ -37,20 +37,20 @@ We will create IAM Policy and Role for AWS API Gateway to push Request Message t
 
 3.1. Select IAM, Navigate to "Roles" and click on "Create Role".  <br />
 3.2. Select "API Gateway" and click "Next:Permissions".  <br />
-![alt text](images/role_apig.png)
+![alt text](images/role_apig.png)  <br />
 3.3. Give a name to the role you created. In my case, it's "apig-sqs-send-msg-role", notice that only attached policy is "AmazonAPIGatewayPushToCloudWatchLogs".  <br />
-![alt text](images/save_role.png)
+![alt text](images/save_role.png)  <br />
 3.4. Once role is created, edit the role and attach "apig-sqs-send-msg-policy"  <br />
-![alt text](images/attach_policy_to_role.png)
+![alt text](images/attach_policy_to_role.png)  <br />
 
 
 ### 4. Create an API ###
 
 3.1. Select API Gateway, click on "Create API", name api as "SQSProxy" and hit "Create".  <br />
-![alt text](images/api_create.png)
+![alt text](images/api_create.png)  <br />
 3.2. Click on "Action" and "create resource" and resource as "v1".  <br />
 3.3. Click on "v1", and hit "action > create resource" to create "enqueue". <br />
 3.4. Click on "enqueue" and hit "action > create method" and from dropdown select "POST". <br />
-![alt text](images/resource_structure.png)
+![alt text](images/resource_structure.png)  <br />
 
 ### 5. Integrate the API ###
