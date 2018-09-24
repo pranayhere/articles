@@ -1,6 +1,6 @@
-# AWS API Gateway Proxy for SQS (Simple Queue Service)
+# API Proxy for SQS (Simple Queue Service)
 
-If you came across a situation where you need to process API Request asynchronously and you want to add a queue in your application, you landed to right place.
+If you want to process API Request asynchronously or add a queue in your application architecture, you landed to the right place.
 
 This article shows how to Integrate Amazon API Gateway as proxy for SQS (Simple Queue Service).
 
@@ -63,7 +63,7 @@ We will create IAM Policy and Role for AWS API Gateway to push Request Message t
 6.1. Click on "Integrate Request" <br />
 ![alt text](images/api_req_flow.png)  <br />
 6.2. Set HTTP header with Name as "Content-Type" and Mapped from as "'application/x-www-form-urlencoded'" <br />
-6.3. In "Request body passthrough" select never and click on "add mapping template", name it as "application/json" and add the following snippet "Action=SendMessage&MessageBody=$input.body". This step will transform yout request body to the one accepted by SQS. <br />
+6.3. In "Request body passthrough" select never and click on "add mapping template", name it as "application/json" and add the following snippet "Action=SendMessage&MessageBody=$input.body". This step will transform your request body to the one accepted by SQS. <br />
 ![alt text](images/api_intg.png)  <br />
 
 ### 7. Test And Deploy ###
